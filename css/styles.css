@@ -1,0 +1,186 @@
+/*!
+  @author Mohamed Muntasir
+  @link https://github.com/devmotheg
+  */
+
+/* General */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-width: 372px;
+}
+
+/* Main */
+
+.todo {
+  max-width: calc(864em / 16);
+  width: 90%;
+  height: 90vh;
+  overflow: auto;
+  background: #222930;
+  padding: 2rem 4rem;
+  color: white;
+  border-radius: calc(8rem / 16);
+}
+
+.todo__header {
+  padding: 1rem;
+}
+
+h1 {
+  margin: 1rem 0 0.5rem;
+}
+
+a {
+  margin-bottom: 1.5rem;
+  display: block;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: smaller;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  border-radius: calc(4rem / 16);
+  border: 0;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.todo__body {
+  position: relative;
+}
+
+.todo__checkbox {
+  margin: 0.7rem auto;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.todo__checkbox p {
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.todo__checkbox div {
+  width: 1rem;
+  height: 1rem;
+  border-radius: calc(2rem / 16);
+  border: calc(1rem / 16) solid white;
+}
+
+.todo__checkbox span:first-child {
+  width: 0.4rem;
+  height: 0.15rem;
+  border-radius: calc(6rem / 16);
+  display: block;
+  background: #d49a3f;
+  transform: rotate(45deg) translate(calc(6rem / 16), calc(4rem / 16));
+  position: relative;
+  z-index: 1;
+  transition: 0.2s;
+}
+
+.todo__checkbox span:last-child {
+  width: 1.2rem;
+  height: 0.425rem;
+  border-radius: calc(6rem / 16);
+  display: block;
+  background: #d49a3f;
+  transform: rotate(-45deg) translateX(calc(1rem / 16));
+  border: calc(3rem / 16) solid #222930;
+  transition: 0.2s;
+}
+
+.--hidden {
+  opacity: 0;
+}
+
+.todo__body > * {
+  counter-increment: counter;
+}
+
+.todo__item::before {
+  content: counter(counter);
+  display: block;
+  padding: 0.5rem;
+  background: white;
+  color: #222930;
+  border-radius: calc(4rem / 16);
+}
+
+.todo__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: calc(2rem / 16) solid #d49a3f;
+  cursor: grab;
+  width: 100%;
+  transition: 0.2s;
+  border-radius: calc(4rem / 16);
+  background: #222930;
+  padding: 0.5rem;
+}
+
+.todo__item.--grabbing {
+  transition: 0s;
+  cursor: grabbing;
+  box-shadow: #d43f3f calc(3rem / 16) calc(3rem / 16) calc(8rem / 16)
+    calc(-2rem / 16);
+  position: relative;
+  z-index: 1;
+}
+
+body.--grabbing {
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+p.toggle {
+  padding: 0.6rem 1.2rem;
+  text-align: left;
+  word-break: break-all;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.todo__body span {
+  font-size: 2rem;
+  color: #d43f3f;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+p.--done {
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.todo__item.--done {
+  border-color: rgb(65, 52, 32);
+}

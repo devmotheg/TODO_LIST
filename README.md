@@ -1,4 +1,4 @@
-# To dos list
+# To Dos List
 
 - You can enter a todo by pressing "Enter" key on your keyboard.
 - You can delete the todo by clicking the delete button.

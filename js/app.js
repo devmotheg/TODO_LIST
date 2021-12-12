@@ -1,7 +1,7 @@
 /*!
-  @author Mohamed Muntasir
-  @link https://github.com/devmotheg
-  */
+ * @author Mohamed Muntasir
+ * @link https://github.com/devmotheg
+ */
 
 const BODY_EL = document.querySelector("body"),
   TODO_INPUT_EL = document.querySelector("input"),

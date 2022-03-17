@@ -1,5 +1,7 @@
 # Todo List
 
+Challenge from Tenzin's list of projects (⌐■_■)
+
 ## Features
 
 - You can enter a todo by pressing "Enter" key on your keyboard.
